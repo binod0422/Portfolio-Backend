@@ -6,21 +6,32 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer id;
+
     private String name;
     private String email;
 
     private String message;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String name, String email, String message) {
+    public User(Integer id, String name, String email, String message) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.message = message;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -50,7 +61,8 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", message='" + message + '\'' +
                 '}';
