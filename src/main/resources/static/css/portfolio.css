@@ -251,10 +251,10 @@ button[type="submit"]{
 .form-box-shadow {
   /* Add a box-shadow to the form */
   box-shadow: 0 5px 10px rgba(58, 175, 169,.9), 0 6px 20px rgba(58, 175, 169,.9);
-  padding: 20px; 
+  padding: 1em;
 }
 
 .binodpic{
   box-shadow: 0 5px 10px #edf6f9, 0 6px 20px rgba(58, 175, 169,.9);
-  padding: 20px; 
+  padding: 1em;
 }

@@ -1,14 +1,16 @@
 package com.binod.portfolio.controllers;
 
-
 import com.binod.portfolio.entities.User;
 import com.binod.portfolio.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.HashMap;
 
@@ -25,44 +27,55 @@ public class UserController {
     }
 
     @GetMapping
-    public ResponseEntity<Iterable<User>> getUser(){
-        return ResponseEntity.ok(userService.getUser());
+    public ResponseEntity<Iterable<User>> getUsers() {
+        return ResponseEntity.ok(userService.getUsers());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Integer id){
-        return ResponseEntity.ok(userService.getUserById(id));
+    public ResponseEntity<User> getUserById(@PathVariable Integer id) {
+        User user = userService.getUserById(id);
+        return ResponseEntity.ok(user);
     }
 
     @PostMapping
-    public ResponseEntity<User> addUser(@RequestBody User user){
-        User addUser = userService.addUser(user);
-        User savedUser = userService.addUser(user);
+    public ResponseEntity<?> addUser(@RequestBody @Valid User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            HashMap<String, Object> responseMap = new HashMap<>();
+            responseMap.put("error", "Validation failed");
+            responseMap.put("errors", bindingResult.getAllErrors());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseMap);
+        }
 
-        URI location = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/user/{id}")
+        User savedUser = userService.addUser(user);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
                 .buildAndExpand(savedUser.getId())
                 .toUri();
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(addUser);
+        return ResponseEntity.created(location).body(savedUser);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User>  updatedPlayer(@PathVariable Integer id, @RequestBody User updates){
-        return ResponseEntity.ok(userService.updateUser(id, updates));
+    public ResponseEntity<?> updateUser(@PathVariable Integer id, @RequestBody @Validated User updates, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            HashMap<String, Object> responseMap = new HashMap<>();
+            responseMap.put("error", "Validation failed");
+            responseMap.put("errors", bindingResult.getAllErrors());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseMap);
+        }
+
+        User updatedUser = userService.updateUser(id, updates);
+        return ResponseEntity.ok(updatedUser);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<HashMap<String, Object>> deleteUser(@PathVariable Integer id){
-
+    public ResponseEntity<HashMap<String, Object>> deleteUser(@PathVariable Integer id) {
         HashMap<String, Object> responseMap = userService.deleteUser(id);
 
-        if(responseMap.get("userInfo") == null){
+        if (responseMap.get("userInfo") == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseMap);
         }
 
         return ResponseEntity.ok(responseMap);
     }
-
-
 }

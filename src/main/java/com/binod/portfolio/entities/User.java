@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 
 @Entity
 public class User {
@@ -11,8 +15,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
 
+    @NotEmpty(message = "Name is required")
     private String name;
+
+    @NotEmpty(message = "Email is required")
+    @Email(message = "Invalid email format")
     private String email;
+
+    @Size(min = 0, max = 500, message = "Message must be less than 500 characters")
 
     private String message;
 

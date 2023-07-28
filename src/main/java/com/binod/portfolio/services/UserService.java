@@ -1,12 +1,12 @@
 package com.binod.portfolio.services;
 
-
 import com.binod.portfolio.entities.User;
 import com.binod.portfolio.repositories.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Optional;
 
@@ -18,7 +18,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public Iterable<User> getUser() {
+    public Iterable<User> getUsers() {
         return userRepository.findAll();
     }
 
@@ -32,15 +32,14 @@ public class UserService {
         return optionalUser.get();
     }
 
-
-    public User addUser(User user) {
+    public User addUser(@Valid User user) {
         return userRepository.save(user);
     }
 
-    public User updateUser(Integer id, User updates) {
+    public User updateUser(Integer id, @Valid User updates) {
         User userToUpdate = getUserById(id);
 
-        if (!updates.getName().isEmpty()) {
+        if (updates.getName() != null && !updates.getName().isEmpty()) {
             userToUpdate.setName(updates.getName());
         }
         if (updates.getEmail() != null) {
@@ -52,27 +51,22 @@ public class UserService {
         return userRepository.save(userToUpdate);
     }
 
-
     public HashMap<String, Object> deleteUser(Integer id) {
         HashMap<String, Object> responseMap = new HashMap<>();
 
         Optional<User> optionalUser = userRepository.findById(id);
 
         if (optionalUser.isEmpty()) {
-//            if the player does not exist, this is what will be returned
             responseMap.put("wasDeleted", false);
             responseMap.put("userInfo", null);
-            responseMap.put("Message", "User not found with id: " + id);
+            responseMap.put("message", "User not found with id: " + id);
             return responseMap;
         }
 
+        userRepository.deleteById(id);
         responseMap.put("wasDeleted", true);
         responseMap.put("userInfo", optionalUser.get());
-
+        responseMap.put("message", "User with id: " + id + " has been deleted successfully.");
         return responseMap;
     }
-
 }
-
-
-
