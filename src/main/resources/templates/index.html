@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/portfolio.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+
+<body>
+
+  <!-- Navbar start -->
+  <nav class="navbar sticky-top navbar-expand-lg ">
+    <a class="navbar-brand ms-2" href="#"><img src="/Logos/personallogo-min.png" height="40" width="100"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse show me-2 ms-2 justify-content-md-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="/Resume.pdf">Resume</a>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- Starting main section -->
+  <div class="container main">
+    <div id="home" class="row align-items-center justify-content-between">
+      <div class="col-5 binodpic" data-aos="fade-right" data-aos-duration="1000">
+        <img src="/images/binod1-min.png" class="img-fluid" height="800" width="400" alt="Binod's photo">
+      </div>
+      <div class="col-5">
+        <h1 class="font-monospace">Hello!<br>I am <strong>Binod</strong></h1>
+        <h4 class="font-monospace">Full-Stack Developer</h4>
+      </div>
+    </div>
+    <!-- end of row -->
+  </div>
+  <!-- end of main section-->
+
+  <!-- Start of About me section -->
+  <div class="container about-me pb-3">
+    <div class="row">
+      <div class="col-md-6 col-lg-7 col-xxl-8">
+        <h2 id="about" class="text-center pt-3">About Me</h2>
+        <p>Hi from Reynoldsburg, OH! I'm Binod, a passionate Software Developer on a mission to conquer the world of
+          technology. I'm always learning and growing, and I bring a unique combination of academic brilliance and
+          real-world expertise to my work.
+          I graduated from Franklin University with a Bachelor's degree in Information Technology with honors. Then,
+          I joined GenerationUSA to master web development fundamentals like JavaScript, Java programming, and Spring
+          Boot. I'm skilled in testing, troubleshooting, and debugging web applications, and I'm always looking for
+          innovative solutions.</p>
+        <div class="additional-text" style="display: none;">
+          <p>I'm not a lone wolf — I love working with others to create groundbreaking solutions using Java, JavaScript,
+            Spring, REST APIs, and more. Let's create amazing applications that impress clients and stakeholders alike!
+            If you're looking for a Software Developer with a passion for learning and innovation, I'm your guy .
+            Connect with me, and let's embark on an epic journey of creativity, collaboration, and success!</p>
+        </div>
+        <button class="learn-more-btn">Learn More</button>
+      </div>
+      <!-- start of column -->
+      <div class="col-md-6 col-lg-4 col-xxl-3 binodpic" data-aos="fade-left" data-aos-duration="1000">
+        <figure class="picture-card">
+          <img src="/images/Subject2-min.png" width="280" height="400">
+        </figure>
+      </div>
+    </div>
+    <!-- end of column -->
+  </div>
+  </div>
+  <!-- End of About me section -->
+
+  <!-- Start of project section -->
+  <div class="container projects pb-3">
+    <div class="row">
+      <div class="col my-2">
+        <h2 id="projects" class="text-center">Projects</h2>
+      </div>
+    </div>
+    <div class="row" data-aos="zoom-out" data-aos-duration="1200">
+      <div class="col">
+        <div class="row row-cols-1 row-cols-sm-2 g-3">
+          <div class="col-xl-4">
+            <a href="/weather" class="card-link">
+              <div class="card">
+                <img src="/images/theweatherapp-min.png" height="210" width="10" class="card-img-top" alt="card-grid-image">
+                <div class="card-body">
+                  <h5 class="card-title">The Weather App</h5>
+                  <p class="card-text">This application allows users to easily look up the weather conditions for their
+                    desired locations. In the process of creating this application, I gained valuable expertise in
+                    making Fetch requests to retrieve data from an external API.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-4">
+            <a href="/moviefinder" class="card-link">
+              <div class="card">
+                <img src="/images/moviefinder-min.png" height="210" width="10"  class="card-img-top" alt="card-grid-image">
+                <div class="card-body">
+                  <h5 class="card-title">Movie Explorer</h5>
+                  <p class="card-text">
+                    Introducing the Movie Explorer App - your ultimate movie recommendation guide! Select a genre, and
+                    instantly receive captivating movie suggestions tailored to your taste.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-4">
+            <a href="/notetaker" class="card-link">
+              <div class="card">
+                <img src="/images/notetaker-min.png" height="210" width="10"  class="card-img-top" alt="notetakerapp">
+                <div class="card-body">
+                  <h5 class="card-title">Note Taking App</h5>
+                  <p class="card-text">Introducing an elegant note-taking app that seamlessly captures your thoughts.
+                    With the ability to effortlessly add and delete notes, this user-friendly application automatically
+                    saves your entries to local storage, ensuring your ideas are secure and always within reach.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Start of project section -->
+
+  <!-- Start of contact section -->
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col contact text-center">
+        <h2 class="pt-3" id="contact">Contact me</h2>
+
+        <form id="form" action="/" class="form-box-shadow" data-aos="zoom-in" data-aos-duration="1500">
+          <div class="input-control">
+            <label for="name">Name <span style="color:red;">*</span></label>
+            <input id="name" name="name" type="text">
+            <div class="error"></div>
+          </div>
+          <div class="input-control">
+            <label for="email">Email <span style="color:red;">*</span></label>
+            <input id="email" name="email" type="text">
+            <div class="error"></div>
+          </div>
+          <div class="input-control pb-2">
+            <label for="message">Message:</label>
+            <textarea class="input-control" id="message" rows="5"></textarea>
+            <div class="error"></div>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+
+        <div class="container">
+          <div class="row py-3 justify-content-center">
+            <div class="col-6">
+              <h5>Connect with me</h5>
+              <a href="https://www.linkedin.com/in/04-22-binod-acharya/" target="_blank">
+                <img class="ms-2 linkedin-icon icon"  src="/Logos/social-min.png" alt="linkedinlogo">
+              </a>
+              <a href="https://github.com/binod0422" target="_blank">
+                <img class="ms-2 github-icon icon" src="/Logos/github-min.png" alt="githublogo">
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- End of contact section -->
+
+  <!-- Start of footer -->
+  <div class="container footer">
+    <div class="row">
+      <div class="col-lg-6 text-center ">
+        <h5>Address:</h5>
+        <p>Columbus, OH 43068</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <h5>Email:</h5>
+        <p>acharyabinod0422@gmail.com</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-center">&copy; 2023 Binod Acharya</p>
+      </div>
+    </div>
+  </div>
+  <!-- end of footer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="/js/portfolio.js" type="module"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
