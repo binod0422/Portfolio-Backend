@@ -81,8 +81,7 @@ h2 {
   height: 400px;
   overflow: hidden;
   background-color: rgba(58, 175, 169,.9);
-
-  border-radius: 10%; 
+  border-radius: 10%;
 }
 
 
@@ -91,7 +90,6 @@ h2 {
   width: 100%;
   height: 100%;
   background-color: rgba(58, 175, 169,.9);
-
   color: #edf6f9;
   font-family: 'Helvetica', 'Times New Roman', sans-serif;
   font-size: 1em;
@@ -107,7 +105,7 @@ h2 {
   height: 27em;
   width: 22em;
   background-color: #17252A;
-  color: #DEF2F1; 
+  color: #DEF2F1;
 }
 
 .card:hover {
@@ -120,7 +118,7 @@ h2 {
 }
 
 .card-link:hover .card {
-  border-color: #2B7A78; 
+  border-color: #2B7A78;
 }
 
 .card-text {
@@ -239,8 +237,8 @@ button[type="submit"]{
 
 /* githug and linkedlin icon styles */
 .icon {
-  height: 3em; 
-  width: 3em; 
+  height: 3em;
+  width: 3em;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -257,4 +255,94 @@ button[type="submit"]{
 .binodpic{
   box-shadow: 0 5px 10px #edf6f9, 0 6px 20px rgba(58, 175, 169,.9);
   padding: 1em;
+}
+
+@media (max-width: 900px) and (min-width: 575px){
+  .projects {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 175, 169,.9);
+    color: #edf6f9;
+    font-family: 'Helvetica', 'Times New Roman', sans-serif;
+    font-size: 1em;
+    padding-top: 1em;
+    border-radius: 1%;
+  }
+
+  .img-fluid{
+    width: 12em;
+    height: 25em;
+  }
+
+  .aboutmeimage{
+    border-radius: 30%;
+  }
+
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    height: 30em;
+    width: 15em;
+    background-color: #17252A;
+    color: #DEF2F1;
+  }
+
+  .picture-card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background-color: rgba(58, 175, 169,.9);
+    border-radius: 10%;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .picture-card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: rgba(58, 175, 169,.9);
+    border-radius: 10%;
+  }
+  .img-fluid{
+    width: 13em;
+    height: 25em;
+  }
+
+  .aboutmeimage{
+    border-radius: 50%;
+  }
+
+ .projects {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58, 175, 169,.9);
+    color: #edf6f9;
+    font-family: 'Helvetica', 'Times New Roman', sans-serif;
+    font-size: 1em;
+    padding-top: 1em;
+    border-radius: 1%;
+  }
+
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    height: 25em;
+    width: 100%;
+    background-color: #17252A;
+    color: #DEF2F1;
+  }
+
 }
