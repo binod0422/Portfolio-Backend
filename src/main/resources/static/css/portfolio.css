@@ -43,7 +43,7 @@ h2 {
 }
 
 /* button styles */
-.btn:hover, .learn-more-btn:hover, .navbar-brand:hover {
+.btn:hover, .learn-more-btn:hover {
   background-color: #17252A;
   color: #3AAfA9;
   transform: scale(1.1);
@@ -362,6 +362,7 @@ button[type="submit"]{
     letter-spacing: .02em;
   }
 }
+
 @media (max-height: 630px) {
   .img-fluid{
     width: 15em;
