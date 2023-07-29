@@ -5,6 +5,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background-color: #DEF2F1;
   color: #edf6f9;
   font-family: 'Lato', 'Helvetica', 'Times New Roman', sans-serif;
@@ -36,14 +37,14 @@ h2 {
   transition: color 0.3s ease-in-out;
 }
 .navbar-nav a:hover{
-  border-radius: 5%; 
-  background-color: #17252A; 
+  border-radius: 5%;
+  background-color: #17252A;
   color: #3AAfA9;
 }
 
 /* button styles */
 .btn:hover, .learn-more-btn:hover, .navbar-brand:hover {
-  background-color: #17252A; 
+  background-color: #17252A;
   color: #3AAfA9;
   transform: scale(1.1);
   transition: transform 0.3s linear;
@@ -57,8 +58,8 @@ h2 {
   height: 100vh;
   /* background-color: rgba(58, 175, 169,.9);
  */
-  border-radius: 1%; 
-  color: #edf6f9; 
+  border-radius: 1%;
+  color: #edf6f9;
   background-color: rgba(58, 175, 169,.9);
 
 }
@@ -73,7 +74,7 @@ h2 {
   font-family: 'Helvetica', 'Times New Roman', sans-serif;
   font-size: 1em;
   padding-top: 1em;
-  border-radius: 2%; 
+  border-radius: 2%;
 }
 
 .picture-card {
@@ -290,6 +291,11 @@ button[type="submit"]{
     color: #DEF2F1;
   }
 
+  h1 {
+    font-weight: bolder;
+    font-size: 2.8em;
+  }
+
   .picture-card {
     display: flex;
     justify-content: center;
@@ -303,7 +309,9 @@ button[type="submit"]{
 }
 
 @media (max-width: 576px) {
-
+  .container{
+    overflow: hidden;
+  }
   .picture-card {
     display: flex;
     justify-content: center;
@@ -339,10 +347,19 @@ button[type="submit"]{
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    height: 25em;
+    height: 27em;
     width: 100%;
     background-color: #17252A;
     color: #DEF2F1;
+  }
+  h1 {
+    font-weight: bolder;
+    font-size: 1.8em;
+  }
+
+  p {
+    line-height: 2em;
+    letter-spacing: .02em;
   }
 
 }
